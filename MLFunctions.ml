@@ -1,6 +1,9 @@
-val TestListInt = [5, 1, 6, 13, 5, 6, 7, 76, 4]
-val TestListReal = [5.3, 2.6, 1.7, 3.2, 7.8, 10.2, 66.2] 
-val TestListListInt = [[1, 9, 3, 6], [1], [2, 4, 6], [5,5]]
+Control.Print.printDepth := 100;
+Control.Print.printLength := 100;
+
+ (* This datatype is a tree of of any type that has leaves or nodes with as many
+  * leaves as they would like *)
+ datatype 'a tree = leaf of 'a | node of 'a tree list
 
 (* Given a partician int.  This returns a tuple with (ListLessThanPart,
  * ListGreatern than Part*)
@@ -40,10 +43,12 @@ fun partitionSort (op <) (x::xs) =
      end
  | partitionSort (op <) _ = []
 
- datatype 'a tree = leaf of 'a | node of 'a tree list
 
-val myTree = node [node [node [leaf [4,2,14],leaf [9,83,32],leaf [96,123,4]],
-                              node [leaf [47,71,82]],node [leaf [19,27,10],
-                                                           leaf [111,77,22,66]],
-                              leaf [120,42,16]],
-                        leaf [83,13]]
+(* Sort PolyTree.  Given a 'b list tree, we need go to all the leaves and sort
+ * each leaf list *)
+fun sortTree (op<) (leaf unsortedList) = leaf (partitionSort (op <)
+unsortedList)
+ | sortTree (op<) (node listOfTrees) = node (map (fn x => (sortTree (op<) x))
+ listOfTrees)
+
+
