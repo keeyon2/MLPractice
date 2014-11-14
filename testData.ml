@@ -25,3 +25,15 @@ val myTree = node [node [node [leaf [4,2,14],leaf [9,83,32],leaf [96,123,4]],
  * *)
 
 val sortTreeTestTree = (node [leaf [4,2,3,1], leaf [7,2,5,0]])
+
+(* To Test Merge, we can run either 
+ * 1. Run: merge (op <) MergeLessList1 MergeLessList2
+ * 2. Run: merge (fn (a, b) => a > b) MergeGreaterList1 MergeGreaterList2 
+ *)
+
+val MergeLessList1 = [1, 4, 5, 7]
+val MergeLessList2 = [2, 5, 7, 8]
+
+val MergeGreaterList1 = [8, 6, 4, 2]
+val MergeGreaterList2 = [7, 5, 3, 1]
+
