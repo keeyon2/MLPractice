@@ -1,9 +1,11 @@
 MLPractice
 ==========
 
-Contains:
+Serious of interesting types and functions for operating on trees and lists
 
-- Quicksort for List of ints. 
+We have,
+
+1. Quicksort for List of ints. 
 Named: intPartitionSort
 
 2. Polymorphic Quicksort (give < operator for compares of argument type) (> operator will cause this to return Decending array). 
