@@ -28,15 +28,15 @@ Named: mergeTree
 
 To test, start sml repl and run.
 
-> - use "MLFunctions.ml";
-> - use "TestData.ml";
-> - intPartitionSort TestListInt;
-> - partitionSort (op <) [1, 9,3, 6, 7];
-> - partitionSort (op <) TestListInt;
-> - partitionSort (op <) TestListReal;
-> - partitionSort (fun(a,b) => length a < length b) TestListListInt;
-> - sortTree (op <) sortTreeTestTree;
-> - merge (op <) MergeLessList1 MergeLessList2;
-> - merge (fn (a, b) => a > b) MergeGreaterList1 MergeGreaterList2;
-> - appendTree myTree;
-> - mergeTree (op <) myTree;
+> --> use "MLFunctions.ml";
+> --> use "TestData.ml";
+> --> intPartitionSort TestListInt;
+> --> partitionSort (op <) [1, 9,3, 6, 7];
+> --> partitionSort (op <) TestListInt;
+> --> partitionSort (op <) TestListReal;
+> --> partitionSort (fun(a,b) => length a < length b) TestListListInt;
+> --> sortTree (op <) sortTreeTestTree;
+> --> merge (op <) MergeLessList1 MergeLessList2;
+> --> merge (fn (a, b) => a > b) MergeGreaterList1 MergeGreaterList2;
+> --> appendTree myTree;
+> --> mergeTree (op <) myTree;
